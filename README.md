@@ -1,73 +1,86 @@
-# React + TypeScript + Vite
+# 🚀 FastCV - Modern React Resume Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FastCV is a premium, high-performance resume template built with **React 19**, **TailwindCSS**, and **Framer Motion**. It features a modern "Hybrid" layout that combines traditional text-heavy professional info with sleek, modern visual elements.
 
-Currently, two official plugins are available:
+![FastCV Preview](./hybrid-resume-template.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **🎨 Premium Design**: Modern, clean, and professional "Hybrid" resume layout.
+- **📱 Fully Responsive**: Looks stunning on desktops, tablets, and mobile devices.
+- **⚡ Ultra Fast**: Built with Vite for near-instant development and optimized production builds.
+- **🎭 Smooth Animations**: Elegant entrance and hover animations powered by Framer Motion.
+- **📑 Data-Driven**: Entirely customizable via a central `resumeData.ts` file—no need to touch complex UI code!
+- **🖨️ Print Optimized**: Specifically styled to look perfect when exported to PDF or printed.
+- **🧩 Modern Tech Stack**: React 19, TypeScript, TailwindCSS, Lucide Icons.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework**: [React 19](https://react.dev/)
+- **Bundler**: [Vite 8](https://vitejs.dev/)
+- **Styling**: [TailwindCSS 3](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [Node.js](https://nodejs.org/) (v18.0.0 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Rakesh01999/resume_template_with_react-tailwindcss.git
+   cd resume_template_with_react-tailwindcss
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+## 📝 Customization
+
+Customizing your resume is incredibly easy! All you need to do is update the `src/resumeData.ts` file with your details.
+
+```typescript
+// src/resumeData.ts
+export const resumeData = {
+  personalInfo: {
+    name: "Your Name",
+    role: "Your Profession",
+    // ... add your details
   },
-])
+  // ... rest of your data
+};
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📜 Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Command | Description |
+| :--- | :--- |
+| `npm run dev` | Starts the development server at `localhost:5173` |
+| `npm run build` | Builds the project for production |
+| `npm run preview` | Previews the production build locally |
+| `npm run lint` | Runs ESLint to check for code quality issues |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests to improve the template.
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+---
+
+Developed with ❤️ by [Rakesh](https://github.com/Rakesh01999)
