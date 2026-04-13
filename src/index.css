@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .resume-section-title {
+    @apply flex items-center gap-3 text-lg font-bold uppercase tracking-wider text-primary-dark mb-4;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+  body {
+    background: white;
+  }
+}
