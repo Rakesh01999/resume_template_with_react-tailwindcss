@@ -1,8 +1,8 @@
-# 🚀 FastCV - Modern React Resume Template
+# 🚀 Resume_template_with_React+Tailwindcss - Modern React Resume Template
 
-FastCV is a premium, high-performance resume template built with **React 19**, **TailwindCSS**, and **Framer Motion**. It features a modern "Hybrid" layout that combines traditional text-heavy professional info with sleek, modern visual elements.
+Resume_template_with_React+Tailwindcss is a premium, high-performance resume template built with **React 19**, **TailwindCSS**, and **Framer Motion**. It features a modern "Hybrid" layout that combines traditional text-heavy professional info with sleek, modern visual elements.
 
-![FastCV Preview](./hybrid-resume-template.png)
+![Resume_template_with_React+Tailwindcss Preview](./hybrid-resume-template.png)
 
 ## ✨ Features
 
