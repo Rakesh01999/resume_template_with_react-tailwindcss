@@ -6,7 +6,7 @@ export const resumeData = {
     email: "will@novoresume.com",
     phone: "123 444 5555",
     location: "New York City, NY",
-    social: "instagram.com/willTribianni",
+    social: "instagram.com/will.tribianni",
     photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop"
   },
   workExperience: [

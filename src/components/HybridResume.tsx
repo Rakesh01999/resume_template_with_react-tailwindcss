@@ -32,90 +32,88 @@ const HybridResume: React.FC = () => {
       >
         {/* Header Section */}
         <div className="relative">
-          {/* Top Layer: Name & Title (White Background) */}
-          <div className="pt-12 pb-8 px-12 flex items-center justify-between">
-            <div className="w-1/4"></div> {/* Spacer for photo */}
-            <div className="w-3/4 pl-12">
-              <h1 className="text-6xl font-extrabold text-[#333C4E] tracking-tight">{personalInfo.name}</h1>
-              <p className="text-3xl text-resume-teal font-semibold mt-2">{personalInfo.role}</p>
+          {/* Layer 1: White Area (Name & Title) */}
+          <div className="pt-12 pb-6 px-12 bg-white flex items-end">
+            <div className="w-[220px] shrink-0"></div> {/* Reduced spacer to tuck text closer to photo */}
+            <div className="pl-12 pb-2">
+              <h1 className="text-5xl font-extrabold text-[#333C4E] tracking-normal leading-none">{personalInfo.name}</h1>
+              <p className="text-2xl text-[#4FA1A7] font-semibold mt-4">{personalInfo.role}</p>
             </div>
           </div>
 
-          {/* Middle Layer: Summary (Navy Background) */}
-          <div className="bg-resume-navy text-white py-12 px-12 relative">
-            <div className="flex items-center">
-              <div className="w-1/4"></div> {/* Spacer for photo */}
-              <div className="w-3/4 pl-12 pr-12">
-                <p className="leading-relaxed text-lg font-light opacity-95">
+          {/* Layer 2: Navy Area (Summary) */}
+          <div className="bg-[#333C4E] text-white py-8 px-12">
+            <div className="flex">
+              <div className="w-[220px] shrink-0"></div> {/* Reduced spacer */}
+              <div className="pl-12 pr-6"> {/* Reduced internal padding to fill more width */}
+                <p className="leading-relaxed text-base font-light opacity-95">
                   {personalInfo.about}
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Bottom Layer: Contact Bar (Teal Background) */}
-          <div className="bg-resume-teal py-4 px-12 flex justify-between items-center text-white shadow-inner">
-             <div className="w-[15%]"></div> {/* Alignment spacer */}
-             <div className="flex-1 flex justify-between items-center gap-4">
-                <div className="flex items-center gap-2 text-sm font-medium">
-                  <Mail size={18} />
-                  <span>{personalInfo.email}</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm font-medium">
-                  <Smartphone size={18} />
-                  <span>{personalInfo.phone}</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm font-medium">
-                  <MapPin size={18} />
-                  <span>{personalInfo.location}</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm font-medium">
-                  <Instagram size={18} />
-                  <span>{personalInfo.social}</span>
-                </div>
-             </div>
+          {/* Layer 3: Teal Area (Contact) */}
+          <div className="bg-[#4FA1A7] py-4 px-12 text-white">
+            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-2">
+              <div className="flex items-center gap-2.5 text-[13px] font-bold whitespace-nowrap">
+                <Mail size={16} strokeWidth={3} />
+                <span>{personalInfo.email}</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-[13px] font-bold whitespace-nowrap">
+                <Smartphone size={16} strokeWidth={3} />
+                <span>{personalInfo.phone}</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-[13px] font-bold whitespace-nowrap">
+                <MapPin size={16} strokeWidth={3} />
+                <span>{personalInfo.location}</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-[13px] font-bold whitespace-nowrap">
+                <Instagram size={16} strokeWidth={3} />
+                <span>{personalInfo.social}</span>
+              </div>
+            </div>
           </div>
 
-          {/* Overlapping Profile Photo */}
-          <div className="absolute left-12 top-[120px] z-10">
-            <div className="w-64 h-64 rounded-full border-[10px] border-resume-teal shadow-2xl overflow-hidden bg-slate-200">
+          {/* Overlapping Profile Photo with Teal Border */}
+          <div className="absolute left-10 top-10 z-20">
+            <div className="w-64 h-64 rounded-full border-[8px] border-[#4FA1A7] shadow-lg overflow-hidden bg-slate-200">
               <img
                 src={personalInfo.photo}
                 alt={personalInfo.name}
-                className="w-full h-full object-cover scale-110"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_300px] px-12 pb-16 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_300px] px-12 pt-12 pb-16 gap-12">
 
           {/* Left Column */}
           <div className="space-y-12">
 
             {/* Work Experience */}
             <motion.section {...fadeIn}>
-              <div className="resume-section-title">
-                <div className="bg-primary-dark p-2 rounded-md text-white">
-                  <Briefcase size={20} />
+              <div className="flex items-center gap-4 mb-8">
+                <div className="bg-[#333C4E] p-2.5 rounded-full text-white shadow-md">
+                  <Briefcase size={22} />
                 </div>
-                <span>Work Experience</span>
+                <h2 className="text-2xl font-extrabold text-[#333C4E] tracking-tight uppercase">Work Experience</h2>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-10">
                 {workExperience.map((job, index) => (
-                  <div key={index} className="relative pl-6 border-l-2 border-slate-100">
-                    <div className="absolute w-3 h-3 bg-accent rounded-full -left-[7.5px] top-1.5" />
-                    <h3 className="text-xl font-bold text-slate-800">{job.title}</h3>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-semibold text-slate-700">{job.company}</span>
-                      <span className="text-xs font-bold text-accent">{job.date}</span>
-                    </div>
-                    <ul className="list-disc list-outside ml-4 space-y-2 text-sm text-slate-600 leading-relaxed">
+                  <div key={index} className="relative pl-2">
+                    <h3 className="text-xl font-extrabold text-[#333C4E]">{job.title}</h3>
+                    <h4 className="text-lg font-bold text-[#333C4E] mt-0.5">{job.company}</h4>
+                    <p className="text-sm font-semibold text-[#4FA1A7] italic mt-1 mb-4">{job.date}</p>
+                    
+                    <ul className="space-y-3">
                       {job.achievements.map((item, i) => (
-                        <li key={i} className="pl-1">
-                          {item}
+                        <li key={i} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
+                          <span className="text-[#4FA1A7] mt-1.5 shrink-0">•</span>
+                          <span>{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -126,20 +124,20 @@ const HybridResume: React.FC = () => {
 
             {/* Workshops & Training */}
             <motion.section {...fadeIn} transition={{ delay: 0.2 }}>
-              <div className="resume-section-title">
-                <div className="bg-primary-dark p-2 rounded-md text-white">
-                  <Award size={20} />
+              <div className="flex items-center gap-4 mb-8">
+                <div className="bg-[#333C4E] p-2.5 rounded-full text-white shadow-md">
+                  <Award size={22} />
                 </div>
-                <span>Workshops & Training Camps</span>
+                <h2 className="text-2xl font-extrabold text-[#333C4E] tracking-tight uppercase">Workshops & Training Camps</h2>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {workshops.map((workshop, index) => (
                   <div key={index}>
-                    <h3 className="font-bold text-slate-800">{workshop.title}</h3>
-                    <p className="text-sm italic text-slate-600">Instructor: {workshop.instructor}</p>
-                    <p className="text-xs font-bold text-accent mt-1">{workshop.date}</p>
-                    <p className="text-xs text-slate-400 mt-0.5 italic">{workshop.location}</p>
+                    <h3 className="text-lg font-extrabold text-[#333C4E]">{workshop.title}</h3>
+                    <p className="text-sm font-bold text-slate-800 mt-1">Instructor: {workshop.instructor}</p>
+                    <p className="text-xs font-semibold text-[#4FA1A7] mt-1">{workshop.date}</p>
+                    <p className="text-xs text-slate-500 mt-1 italic">{workshop.location}</p>
                   </div>
                 ))}
               </div>
@@ -152,16 +150,16 @@ const HybridResume: React.FC = () => {
 
             {/* Hard Skills */}
             <motion.section {...fadeIn} transition={{ delay: 0.3 }}>
-              <div className="resume-section-title !mb-6">
-                <div className="bg-primary-dark p-2 rounded-full text-white">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-[#333C4E] p-2 rounded-full text-white">
                   <Cpu size={20} />
                 </div>
-                <span>Hard Skills</span>
+                <h3 className="text-xl font-bold text-[#333C4E] uppercase tracking-wider">Hard Skills</h3>
               </div>
-              <ul className="space-y-2 text-sm text-slate-700 font-medium">
+              <ul className="space-y-3 text-sm text-slate-800 font-medium">
                 {hardSkills.map((skill, index) => (
                   <li key={index} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-accent rounded-full" />
+                    <span className="w-1.5 h-1.5 bg-[#4FA1A7] rounded-full" />
                     {skill}
                   </li>
                 ))}
@@ -170,17 +168,17 @@ const HybridResume: React.FC = () => {
 
             {/* Soft Skills */}
             <motion.section {...fadeIn} transition={{ delay: 0.4 }}>
-              <div className="resume-section-title !mb-6">
-                <div className="bg-primary-dark p-2 rounded-full text-white">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-[#333C4E] p-2 rounded-full text-white">
                   <Lightbulb size={20} />
                 </div>
-                <span>Soft Skills</span>
+                <h3 className="text-xl font-bold text-[#333C4E] uppercase tracking-wider">Soft Skills</h3>
               </div>
               <div className="flex flex-wrap gap-2">
                 {softSkills.map((skill, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1.5 bg-slate-300 text-slate-600 text-xs font-bold rounded shadow-sm hover:bg-slate-400 transition-colors cursor-default"
+                    className="px-4 py-2 bg-slate-200 text-slate-600 text-xs font-bold rounded shadow-sm hover:bg-slate-300 transition-colors cursor-default"
                   >
                     {skill}
                   </span>
@@ -190,32 +188,32 @@ const HybridResume: React.FC = () => {
 
             {/* Education */}
             <motion.section {...fadeIn} transition={{ delay: 0.5 }}>
-              <div className="resume-section-title !mb-6">
-                <div className="bg-primary-dark p-2 rounded-full text-white">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-[#333C4E] p-2 rounded-full text-white">
                   <GraduationCap size={20} />
                 </div>
-                <span>Education</span>
+                <h3 className="text-xl font-bold text-[#333C4E] uppercase tracking-wider">Education</h3>
               </div>
-              <div className="border-l-2 border-accent pl-4">
-                <h3 className="font-bold text-slate-800 text-sm leading-tight">{education.degree}</h3>
-                <p className="text-slate-700 text-xs mt-1">{education.school}</p>
-                <p className="text-accent text-[10px] font-bold mt-1 italic uppercase">{education.location}</p>
+              <div className="border-l-2 border-[#4FA1A7] pl-4">
+                <h3 className="font-extrabold text-[#333C4E] text-base leading-tight uppercase">{education.degree}</h3>
+                <p className="text-slate-800 text-sm mt-1 font-bold">{education.school}</p>
+                <p className="text-[#4FA1A7] text-xs mt-1 italic font-semibold">{education.location}</p>
               </div>
             </motion.section>
 
             {/* Languages */}
             <motion.section {...fadeIn} transition={{ delay: 0.6 }}>
-              <div className="resume-section-title !mb-6">
-                <div className="bg-primary-dark p-2 rounded-full text-white">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-[#333C4E] p-2 rounded-full text-white">
                   <LangIcon size={20} />
                 </div>
-                <span>Languages</span>
+                <h3 className="text-xl font-bold text-[#333C4E] uppercase tracking-wider">Languages</h3>
               </div>
               <div className="space-y-4">
                 {languages.map((lang, index) => (
                   <div key={index}>
                     <p className="text-sm font-bold text-slate-800">{lang.name}</p>
-                    <p className="text-xs text-accent italic">{lang.level}</p>
+                    <p className="text-xs text-[#4FA1A7] italic font-medium">{lang.level}</p>
                   </div>
                 ))}
               </div>
