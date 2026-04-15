@@ -12,6 +12,10 @@ export default {
           light: '#E1EEF4',
         },
         accent: '#5E8B95',
+        resume: {
+          navy: '#333C4E',
+          teal: '#4FA1A7',
+        }
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif', 'Outfit'],
